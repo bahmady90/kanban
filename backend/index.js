@@ -19,6 +19,11 @@ app.use((req, res, next) => {
 })
 
 app.use(cors());
+
+app.get("/", (req, res) => {
+    res.send("Welcome to the Kanban Backend API");
+  });
+
 app.use("/api/", boardRoutes)
 
 mongoose.connect(process.env.MONGO_URI).
