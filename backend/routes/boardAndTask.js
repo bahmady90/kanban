@@ -1,5 +1,5 @@
 import express from "express"
-import { deleteBoard, getAllBoards, patchBoard, postBoard } from "./controllers/boardController";
+import { deleteBoard, getAllBoards, patchBoard, postBoard } from "../api/controllers/boardController.js";
 
 const router = express.Router();
 
