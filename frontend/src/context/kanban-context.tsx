@@ -1,4 +1,5 @@
 import { Dispatch, ReactNode, createContext, useContext, useEffect, useReducer } from "react"
+import { BASE_URL } from "../functions"
 
 // main types for the board, column and task
 export type TaskStatus = string
@@ -279,7 +280,7 @@ export default function KanbanContextProvider({children}: KanbanContextProviderP
                 dispatch({ type: "SET_LOADING_TRUE" });
             
                 try {
-                    const res = await fetch("http://localhost:4000/api");
+                    const res = await fetch(BASE_URL);
                     if (!res.ok) {
                         dispatch({type: "SET_ERROR", payload: "Network response was not ok"});
                         return; // stop execution

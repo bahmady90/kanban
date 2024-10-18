@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Task, useKanbanContext } from "../context/kanban-context";
-import { patchBoard } from "../functions";
+import { BASE_URL, patchBoard } from "../functions";
 
 
 export function useBoardForm(){
@@ -104,7 +104,7 @@ async function handleAddBoard(){
   }
   dispatch({type: "SET_LOADING_TRUE"});
   try{
-    const result = await fetch(`http://localhost:4000/api`, {
+    const result = await fetch(BASE_URL, {
       method: "POST",
       body: JSON.stringify({newBoard}),
       headers: {
@@ -159,7 +159,7 @@ async function handleDeleteBoard(){
   }
 
   try{
-    const result = await fetch(`http://localhost:4000/api/${currentBoard._id}`, {
+    const result = await fetch(`${BASE_URL}/${currentBoard._id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

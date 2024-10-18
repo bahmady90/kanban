@@ -1,5 +1,7 @@
 import { Action, Board, Boards } from "./context/kanban-context";
 
+export const BASE_URL = "https://kaban-omega.vercel.app/api"
+
 import { Dispatch } from "react";
 
 type DispatchType = Dispatch<Action>;
@@ -8,7 +10,7 @@ export async function patchBoard(dispatch : DispatchType, boards : Boards, board
   
     dispatch({type: "SET_LOADING_TRUE"})
   try{
-    const result = await fetch(`http://localhost:4000/api/${boards[boardSelected! - 1]._id}`, {
+    const result = await fetch(`${BASE_URL}/${boards[boardSelected! - 1]._id}`, {
       method: "PATCH",
       body: JSON.stringify({newBoard}),
       headers: {
