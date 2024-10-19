@@ -38,7 +38,7 @@ export default function AddTask() {
           <label className="text-body-M text-medium-grey">Description</label>
           <textarea
             value={description}
-            className=" dark:bg-dark-dark-grey bg-white dark:text-white py-2 pl-2 w-full border-[2px] border-[#828FA3] border-opacity-25 rounded-md h-28 outline-none focus:border-[#A8A4FF]"
+            className=" w-[90%] dark:bg-dark-dark-grey bg-white dark:text-white py-2 pl-2 border-[2px] border-[#828FA3] border-opacity-25 rounded-md h-28 outline-none focus:border-[#A8A4FF]"
             placeholder="e.g. It’s always good to take a break. This 15 minute break will recharge the batteries a little."
             onChange={(e) => handleSetDescription(e)}
             />
