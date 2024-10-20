@@ -9,6 +9,7 @@ import Modal from "./components/Modal";
 import useHandleModal from "./hooks/useHandleModal";
 import OptionsWindowBoard from "./components/board/OptionsWindowBoard";
 import LoadingSpinner from "./components/LoadingSpinner";
+import Error from "./components/Error";
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
     }
   }, [dispatch, taskSelected]);
 
-  if(error) return <h1>{error}</h1>
+  if(error) return <Error/>
 
   if(loading === null) return <LoadingSpinner/>
 
