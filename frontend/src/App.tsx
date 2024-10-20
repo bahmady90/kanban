@@ -20,6 +20,8 @@ function App() {
   const openModal = getOpenModal();
   const modalChild = getModalChild();
 
+  console.log(openModal);
+
 
   // to make sure the window closes whenever the modal closes. I tried to hanlde the logic in the useModal-hook but it didnt work lol
   useEffect(() => {
