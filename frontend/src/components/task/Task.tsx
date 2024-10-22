@@ -25,7 +25,7 @@ export default function Task({ handleClickTask, task }: TaskProps) {
   return (
     <div
       ref={drag}
-      className={`mt-6 w-[17.5rem] px-4 py-6 rounded-md shadow-md cursor-pointer dark:bg-dark-dark-grey bg-white relative group ${
+      className={`mt-6 w-[17.5rem] px-4 py-6 rounded-md shadow-md dark:shadow-white cursor-pointer dark:bg-dark-dark-grey bg-white relative group ${
         isDragging ? "opacity-50" : "opacity-100"
       }`}
       onClick={handleClickTask}
