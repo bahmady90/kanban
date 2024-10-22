@@ -2,20 +2,18 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import { TouchBackend } from 'react-dnd-touch-backend';
+
 
 import App from './App.tsx'
 import './index.css'
 import KanbanContextProvider from './context/kanban-context.tsx'
 
-const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent);
-// const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-const Backend = isMobile ? TouchBackend : HTML5Backend;
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <KanbanContextProvider>
-      <DndProvider backend={Backend}>
+      <DndProvider backend={HTML5Backend}>
         <App />
       </DndProvider>  
     </KanbanContextProvider>
