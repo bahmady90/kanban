@@ -13,7 +13,7 @@ import KanbanContextProvider from './context/kanban-context.tsx'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <KanbanContextProvider>
-      <DndProvider backend={HTML5Backend}>
+      <DndProvider backend={HTML5Backend} options={{ enableMouseEvents: true }}>
         <App />
       </DndProvider>  
     </KanbanContextProvider>
