@@ -47,10 +47,7 @@ export default function Modal({openModal, children}: ModalProps) {
   return (
     
     <dialog
-    className={`w-fit top-[10%] sm:top-0 h-fit rounded-2xl outline-none float dark:bg-dark-dark-grey bg-white relative
-        transition-transform duration-300 ease-in-out transform ${
-            openModal ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
-        }`} // Transitions based on openModal
+    className={`w-fit top-[10%] sm:top-0 h-fit rounded-2xl outline-none float dark:bg-dark-dark-grey bg-white relative`}
         ref={ref}
         // onCancel={handleCloseModal}
         onClose={handleCloseModal} 
